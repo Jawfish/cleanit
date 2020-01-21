@@ -1,21 +1,19 @@
 <template>
-  <div class="flex items-center px-4 bg-gray-200 border-2 border-gray-200 rounded">
+  <div class="flex items-center px-4 bg-gray-800 rounded-sm">
     <h3>r/</h3>
     <input
       type="text"
       name="search"
       id="search"
-      class="mr-3 leading-tight text-gray-700 bg-transparent border-none appearance-none focus:outline-none"
+      class="mr-3 leading-tight text-gray-200 bg-transparent border-none appearance-none focus:outline-none"
     />
-    <!-- <button
-      class="px-2 py-1 text-white bg-blue-500 border-2 border-blue-500 rounded hover:bg-blue-400 hover:border-blue-400"
-      type="button"
-    >GO</button>-->
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'AppNavBarSubSearch'
+}
 </script>
 
 <style lang="postcss" scoped>
@@ -25,11 +23,10 @@ export default {}
 * {
   @apply text-gray-500;
 }
-div {
-  height: 3rem;
-}
-div:focus-within {
-  @apply border-blue-400 border-2;
+@media only screen and (max-width: 860px) {
+  div {
+    height: 3rem;
+  }
 }
 </style>
 

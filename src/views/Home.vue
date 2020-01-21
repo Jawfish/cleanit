@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-main-view class="mx-auto" />
+    <app-main-view page="home" query="https://www.reddit.com/r/all/.json" />
   </div>
 </template>
 
@@ -11,6 +11,3 @@ export default {
   components: { AppMainView }
 }
 </script>
-
-<style lang="postcss" scoped>
-</style>

@@ -25,11 +25,6 @@ const routes = [
     component: () => import('../views/Hot.vue'),
   },
   {
-    path: '/all',
-    name: 'all',
-    component: () => import('../views/All.vue'),
-  },
-  {
     path: '/rising',
     name: 'rising',
     component: () => import('../views/Rising.vue'),
