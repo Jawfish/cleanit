@@ -1,11 +1,11 @@
 <template>
-  <div></div>
+	<div></div>
 </template>
 
 <script>
 export default {
-  name: 'AppNavBarSub',
-  components: {}
+	name: 'AppNavBarSub',
+	components: {}
 }
 </script>
 
