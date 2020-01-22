@@ -13,10 +13,11 @@
 		<div class="flex flex-col">
 			<!-- SUBREDDIT -->
 			<!-- // TODO: send subreddit to search bar and load the selected subreddit -->
-			<a
+			<span
 				:href="'https://www.reddit.com/' + post.subreddit_name_prefixed"
-				class="self-start text-xs text-gray-500"
-			>{{post.subreddit_name_prefixed}}</a>
+				class="self-start text-xs text-gray-500 subreddit"
+				@click="setSubreddit(post.subreddit)"
+			>{{post.subreddit_name_prefixed}}</span>
 			<div class="flex items-center">
 				<!-- TITLE -->
 				<a
@@ -89,6 +90,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
 	name: 'AppPost',
 	data() {
@@ -96,13 +98,17 @@ export default {
 			truncatedLink: ''
 		}
 	},
-	props: ['post']
+	props: ['post'],
+	methods: mapActions(['setSubreddit'])
 }
 </script>
 
 <style lang="postcss" scoped>
 .content {
 	max-width: 110ch;
+}
+.subreddit {
+	cursor: pointer;
 }
 .thumbnail {
 	width: 135px;

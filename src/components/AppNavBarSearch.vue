@@ -1,3 +1,4 @@
+// TODO: when a user types in a subreddit, set the subreddit in the store
 <template>
 	<div class="flex items-center px-4 bg-gray-800 rounded-sm">
 		<h3>r/</h3>
@@ -5,14 +6,22 @@
 			type="text"
 			name="search"
 			id="search"
+			v-model="subreddit"
 			class="mr-3 leading-tight text-gray-200 bg-transparent border-none appearance-none focus:outline-none"
 		/>
 	</div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-	name: 'AppNavBarSubSearch'
+	name: 'AppNavBarSubSearch',
+	methods: mapActions(['setSubreddit']),
+	computed: {
+		subreddit() {
+			return this.$store.getters.subreddit
+		}
+	}
 }
 </script>
 
@@ -29,26 +38,3 @@ export default {
 	}
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-// <form class="w-full max-w-sm">
-//   <div class="flex items-center py-2 border-b border-b-2 border-teal-500">
-//     <input class="w-full px-2 py-1 mr-3 leading-tight text-gray-700 bg-transparent border-none appearance-none focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
-//     <button class="flex-shrink-0 px-2 py-1 text-sm text-white bg-teal-500 border-4 border-teal-500 rounded hover:bg-teal-700 hover:border-teal-700" type="button">
-//       Sign Up
-//     </button>
-//     <button class="flex-shrink-0 px-2 py-1 text-sm text-teal-500 border-4 border-transparent rounded hover:text-teal-800" type="button">
-//       Cancel
-//     </button>
-//   </div>
-// </form>

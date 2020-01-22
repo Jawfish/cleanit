@@ -11,10 +11,14 @@ export default new Vuex.Store({
 			rising: [],
 			new: [],
 		},
+		subreddit: '',
 	},
 	getters: {
 		posts: state => {
 			return state.posts
+		},
+		subreddit: state => {
+			return state.subreddit
 		},
 	},
 	mutations: {
@@ -25,6 +29,9 @@ export default new Vuex.Store({
 		},
 		UNLOAD_POSTS(state, page) {
 			state.posts[page] = []
+		},
+		SET_SUBREDDIT(state, subreddit) {
+			state.subreddit = subreddit
 		},
 	},
 	actions: {
@@ -42,6 +49,9 @@ export default new Vuex.Store({
 						})
 					)
 				)
+		},
+		setSubreddit: ({ commit }, subreddit) => {
+			commit('SET_SUBREDDIT', subreddit)
 		},
 	},
 })
