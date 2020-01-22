@@ -1,4 +1,3 @@
-// TODO: quick links to trending/hot/top here
 <template>
 	<nav class="flex justify-between pt-2 pb-3 text-2xl text-gray-600 bg-blue-800 shadow-lg">
 		<AppNavBarSearch class="m-2" />
