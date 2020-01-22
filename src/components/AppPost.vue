@@ -101,36 +101,3 @@ export default {
 	methods: mapActions(['setSubreddit'])
 }
 </script>
-
-<style lang="postcss" scoped>
-.content {
-	max-width: 110ch;
-}
-.subreddit {
-	cursor: pointer;
-}
-.thumbnail {
-	width: 135px;
-	height: 135px;
-	display: none;
-}
-i {
-	@apply text-gray-500;
-}
-@media only screen and (max-width: 768px) {
-	.thumbnail {
-		display: none;
-	}
-	.post {
-		overflow: scroll;
-		padding: 1rem 0 1rem 0;
-	}
-	.info {
-		@apply py-1;
-	}
-	.content {
-		@apply pr-2;
-		max-width: 100%;
-	}
-}
-</style>

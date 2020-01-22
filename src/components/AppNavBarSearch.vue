@@ -5,9 +5,8 @@
 		<input
 			type="text"
 			name="search"
-			id="search"
 			v-model="subreddit"
-			class="mr-3 leading-tight text-gray-200 bg-transparent border-none appearance-none focus:outline-none"
+			class="mr-3 leading-tight text-gray-200 bg-transparent border-none appearance-none search focus:outline-none"
 		/>
 	</div>
 </template>
@@ -24,17 +23,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="postcss" scoped>
-*::placeholder {
-	@apply text-gray-500;
-}
-* {
-	@apply text-gray-500;
-}
-@media only screen and (max-width: 860px) {
-	div {
-		height: 3rem;
-	}
-}
-</style>

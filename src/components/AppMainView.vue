@@ -25,24 +25,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="postcss" scoped>
-#app-main-view {
-	max-width: 1175px;
-}
-#app-main-view:empty {
-	display: none;
-}
-.post:not(:first-child) {
-	/* @apply my-4; */
-}
-.post:not(:last-child) {
-	@apply border-b border-gray-300;
-}
-@media only screen and (max-width: 768px) {
-	#app-main-view {
-		max-width: 100vw;
-		padding: 0;
-	}
-}
-</style>
