@@ -1,41 +1,38 @@
 <template>
 	<nav class="flex justify-between pt-2 pb-3 text-2xl text-gray-600 bg-blue-800 shadow-lg">
 		<AppNavBarSearch class="m-2" />
-
 		<div class="flex items-center justify-between mb-1 leading-tight nav-links">
-			<router-link class="nav-link" :to="{ name: 'home' }">
+			<div @click="unloadPosts(), setQuery('https://www.reddit.com/r/all/.json'), populatePosts() ">
 				<i class="mr-2 fas fa-home"></i>
 				<span>Home</span>
-			</router-link>
-			<router-link class="nav-link" :to="{ name: 'hot' }">
+			</div>
+			<div @click="unloadPosts(),setQuery('https://www.reddit.com/hot/.json'), populatePosts()">
 				<i class="mr-2 fas fa-fire"></i>
 				<span>Hot</span>
-			</router-link>
-			<router-link class="nav-link" :to="{ name: 'top' }">
+			</div>
+			<div @click="unloadPosts(),setQuery('https://www.reddit.com/top/.json'), populatePosts()">
 				<i class="mr-2 fas fa-thumbs-up"></i>
 				<span>Top</span>
-			</router-link>
-
-			<router-link class="nav-link" :to="{ name: 'rising' }">
+			</div>
+			<div @click="unloadPosts(),setQuery('https://www.reddit.com/rising/.json'), populatePosts()">
 				<i class="mr-2 fas fa-rocket"></i>
 				<span>Rising</span>
-			</router-link>
-			<router-link class="nav-link" :to="{ name: 'new' }">
+			</div>
+			<div @click="unloadPosts(),setQuery('https://www.reddit.com/new/.json'), populatePosts()">
 				<i class="mr-2 fas fa-star"></i>
 				<span>New</span>
-			</router-link>
+			</div>
 		</div>
 	</nav>
 </template>
 <script>
 import AppNavBarSearch from '@/components/AppNavBarSearch'
+import { mapActions } from 'vuex'
 
 export default {
 	name: 'AppNavBar',
 	components: { AppNavBarSearch },
-	data() {
-		return {}
-	}
+	methods: mapActions(['setQuery', 'populatePosts', 'unloadPosts'])
 }
 </script>
 

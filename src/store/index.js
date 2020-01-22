@@ -4,52 +4,48 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
 	state: {
-		posts: {
-			home: [],
-			hot: [],
-			top: [],
-			rising: [],
-			new: [],
-		},
+		posts: [],
 		subreddit: '',
+		query: 'https://www.reddit.com/r/all/.json',
 	},
 	getters: {
-		posts: state => {
-			return state.posts
-		},
-		subreddit: state => {
-			return state.subreddit
-		},
+		posts: state => state.posts,
+		subreddit: state => state.subreddit,
+		query: state => state.query,
 	},
 	mutations: {
-		ADD_POST(state, payload) {
-			state.posts[payload.page].push(payload.post)
+		ADD_POST(state, post) {
+			state.posts.push(post)
 		},
-		UNLOAD_POSTS(state, page) {
-			state.posts[page] = []
+		UNLOAD_POSTS(state) {
+			state.posts = []
 		},
 		SET_SUBREDDIT(state, subreddit) {
 			state.subreddit = subreddit
 		},
+		SET_QUERY(state, query) {
+			state.query = query
+			console.log('Set state query to ' + state.query)
+		},
 	},
 	actions: {
-		unloadPosts: ({ commit }, page) => {
-			commit('UNLOAD_POSTS', page)
+		unloadPosts: ({ commit }) => {
+			commit('UNLOAD_POSTS')
+			console.log('Unloaded posts')
 		},
-		populatePosts: ({ commit }, payload) => {
-			fetch(payload.query)
+		populatePosts: ({ commit, state }) => {
+			fetch(state.query)
 				.then(response => response.json())
-				.then(data =>
-					data.data.children.forEach(child =>
-						commit('ADD_POST', {
-							post: child.data,
-							page: payload.page,
-						})
-					)
-				)
+				.then(data => {
+					data.data.children.forEach(child => commit('ADD_POST', child.data))
+					console.log('Populated posts')
+				})
 		},
 		setSubreddit: ({ commit }, subreddit) => {
 			commit('SET_SUBREDDIT', subreddit)
+		},
+		setQuery: ({ commit }, query) => {
+			commit('SET_QUERY', query)
 		},
 	},
 })

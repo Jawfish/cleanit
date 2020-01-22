@@ -1,19 +1,18 @@
 <template>
 	<div id="app">
-		<app-nav-bar class />
-		<router-view class="pt-24 router-view" />
-		<footer>hi</footer>
+		<app-nav-bar />
+		<app-main-view />
 	</div>
 </template>
 <script>
+import AppMainView from '@/components/AppMainView'
 import AppNavBar from '@/components/AppNavBar'
-import { mapActions } from 'vuex'
 
 export default {
 	components: {
-		AppNavBar
-	},
-	methods: mapActions(['populatePosts', 'unloadPosts'])
+		AppNavBar,
+		AppMainView
+	}
 }
 </script>
 <style lang="postcss">

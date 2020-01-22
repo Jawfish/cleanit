@@ -12,7 +12,6 @@
 		</div>
 		<div class="flex flex-col">
 			<!-- SUBREDDIT -->
-			<!-- // TODO: send subreddit to search bar and load the selected subreddit -->
 			<span
 				:href="'https://www.reddit.com/' + post.subreddit_name_prefixed"
 				class="self-start text-xs text-gray-500 subreddit"
