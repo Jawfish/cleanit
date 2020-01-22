@@ -33,12 +33,12 @@
 
 				<!-- FLAIR -->
 				<!-- <div class="flex text-xs text-gray-700">
-          <div class="px-1 mx-1 bg-gray-400 rounded">{{type}}</div>
-          <div
+		<div class="px-1 mx-1 bg-gray-400 rounded">{{type}}</div>
+		<div
             v-for="(flair, index) in flairs"
             :key="index"
             class="px-1 mx-1 bg-gray-400 rounded"
-          >{{flair}}</div>
+		>{{flair}}</div>
 				</div>-->
 			</div>
 			<div class="flex flex-col items-start text-gray-600">
@@ -77,11 +77,11 @@
 				</div>
 			</div>
 			<!-- CONTENT
-      <div
+		<div
         class="leading-tight text-left text-gray-900 content"
         v-if="post.selftext.length < 400"
-      >{{ post.selftext }}</div>
-      <div
+		{{ post.selftext }}</div>
+		<div
         class="leading-tight text-left text-gray-900 content"
         v-else
 			>{{ post.selftext.substring(0,400) + '...' }}</div>-->

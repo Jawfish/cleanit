@@ -23,9 +23,7 @@ export default new Vuex.Store({
 	},
 	mutations: {
 		ADD_POST(state, payload) {
-			if (state.posts[payload.page] != []) {
-				state.posts[payload.page].push(payload.post)
-			}
+			state.posts[payload.page].push(payload.post)
 		},
 		UNLOAD_POSTS(state, page) {
 			state.posts[page] = []
