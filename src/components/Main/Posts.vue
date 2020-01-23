@@ -1,16 +1,16 @@
 <template>
 	<div id="app-main-view">
-		<app-main-view-post class="post" v-for="(post, index) in posts" :key="index" :post="post" />
+		<app-post class="post" v-for="(post, index) in posts" :key="index" :post="post" />
 	</div>
 </template>
 
 <script>
-import AppMainViewPost from './AppMainViewPost'
+import AppPost from './Post'
 import { mapActions } from 'vuex'
 
 export default {
-	name: 'AppMainview',
-	components: { AppMainViewPost },
+	name: 'Posts',
+	components: { AppPost },
 	methods: mapActions(['populatePosts', 'unloadPosts']),
 	computed: {
 		posts() {

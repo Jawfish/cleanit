@@ -1,17 +1,17 @@
 <template>
 	<div id="app">
 		<app-nav-bar />
-		<app-main-view />
+		<app-posts />
 	</div>
 </template>
 <script>
-import AppMainView from '@/components/AppMainView/AppMainView'
-import AppNavBar from '@/components/AppNavBar/AppNavBar'
+import AppPosts from '@/components/Main/Posts'
+import AppNavBar from '@/components/Header/Nav'
 
 export default {
 	components: {
 		AppNavBar,
-		AppMainView
+		AppPosts
 	}
 }
 </script>

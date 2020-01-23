@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/components/App'
 import store from './store'
 import './assets/tailwind.css'
 import VueResource from 'vue-resource'
