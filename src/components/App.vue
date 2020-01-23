@@ -24,13 +24,13 @@ html {
 	@apply bg-blue-900;
 }
 nav {
-	@apply flex justify-between px-8 pt-2 pb-3 text-2xl text-gray-600 bg-blue-800 shadow-lg fixed;
+	@apply flex justify-between px-8 py-3 text-2xl text-gray-600 bg-blue-800 shadow-lg leading-none fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
 	.nav-link {
-		@apply mx-1 text-gray-100;
-		transition: all 250ms ease;
+		@apply mx-1 text-gray-100 leading-none;
+		transition: all 150ms ease;
 		i {
 			@apply mx-1;
 		}
@@ -63,6 +63,10 @@ nav {
 			@apply flex flex-col;
 			.title {
 				@apply mb-1 text-xl leading-none text-left text-gray-800;
+				transition: all 150ms ease;
+				&:hover {
+					@apply text-gray-600;
+				}
 			}
 			.link {
 				@apply text-sm mb-1 italic leading-none text-left text-gray-500;
@@ -79,6 +83,9 @@ nav {
 			.author,
 			.time {
 				@apply text-sm;
+				&:not(:first-child) {
+					@apply mx-1;
+				}
 				i {
 					@apply mx-1 text-gray-400;
 				}
