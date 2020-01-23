@@ -63,7 +63,7 @@ nav {
 			@apply flex flex-col;
 			.title {
 				@apply mb-1 text-xl leading-none text-left text-gray-800;
-				transition: all 150ms ease;
+				transition: all 149ms ease;
 				&:hover {
 					@apply text-gray-600;
 				}
