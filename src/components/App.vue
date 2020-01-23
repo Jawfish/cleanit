@@ -17,14 +17,12 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+	font-family: 'Rubik', sans-serif;
+}
 html {
 	@apply bg-blue-900;
 }
-
-a {
-	font-family: 'Rubik', sans-serif;
-}
-
 nav {
 	@apply flex justify-between px-8 pt-2 pb-3 text-2xl text-gray-600 bg-blue-800 shadow-lg fixed;
 	width: 100%;
@@ -57,7 +55,7 @@ nav {
 		display: none;
 	}
 	.post {
-		@apply flex flex-col px-4 py-4 items-start;
+		@apply flex flex-col px-4 py-4 items-start text-gray-400;
 		&:not(:last-child) {
 			@apply border-b border-gray-300;
 		}
@@ -67,7 +65,7 @@ nav {
 				@apply mb-1 text-xl leading-none text-left text-gray-800;
 			}
 			.link {
-				@apply mb-1 italic leading-none text-left text-gray-500;
+				@apply text-sm mb-1 italic leading-none text-left text-gray-500;
 			}
 		}
 		.subreddit {
@@ -75,14 +73,15 @@ nav {
 			cursor: pointer;
 		}
 		.info {
-			@apply flex text-gray-500;
-			.score {
-			}
-			.comments {
-			}
-			.author {
-			}
+			@apply flex text-gray-500 justify-between;
+			.score,
+			.comments,
+			.author,
 			.time {
+				@apply text-sm;
+				i {
+					@apply mx-1 text-gray-400;
+				}
 			}
 		}
 	}
