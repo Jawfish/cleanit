@@ -1,5 +1,5 @@
 <template>
-	<div class="flex px-4 py-4 post">
+	<div id="post">
 		<!-- THUMBNAIL -->
 		<img
 			v-if="post.thumbnail !== 'self' && post.thumbnail !== 'default' && post.thumbnail !== 'nsfw'"
@@ -29,16 +29,6 @@
 					class="mb-1 text-xl leading-tight text-left text-gray-800"
 					v-else
 				>{{ post.title.substring(0,240) + '...' }}</a>
-
-				<!-- FLAIR -->
-				<!-- <div class="flex text-xs text-gray-700">
-		<div class="px-1 mx-1 bg-gray-400 rounded">{{type}}</div>
-		<div
-            v-for="(flair, index) in flairs"
-            :key="index"
-            class="px-1 mx-1 bg-gray-400 rounded"
-		>{{flair}}</div>
-				</div>-->
 			</div>
 			<div class="flex flex-col items-start text-gray-600">
 				<!-- LINK -->
@@ -75,15 +65,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- CONTENT
-		<div
-        class="leading-tight text-left text-gray-900 content"
-        v-if="post.selftext.length < 400"
-		{{ post.selftext }}</div>
-		<div
-        class="leading-tight text-left text-gray-900 content"
-        v-else
-			>{{ post.selftext.substring(0,400) + '...' }}</div>-->
 		</div>
 	</div>
 </template>

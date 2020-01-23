@@ -26,15 +26,24 @@ a {
 }
 
 nav {
+	@apply flex justify-between px-8 pt-2 pb-3 text-2xl text-gray-600 bg-blue-800 shadow-lg fixed;
 	width: 100%;
-	position: fixed;
+	top: 0;
+	left: 0;
 	.nav-link {
-		@apply px-2 text-gray-100;
+		@apply mx-1 text-gray-100;
 		transition: all 250ms ease;
+		i {
+			@apply mx-1;
+		}
 		&:hover {
 			cursor: pointer;
 			@apply text-yellow-500;
 			background-position-y: 100%;
+		}
+		// nav-links; outer container
+		&s {
+			@apply flex items-center justify-between mb-1 leading-tight;
 		}
 	}
 	.search {
@@ -42,11 +51,13 @@ nav {
 	}
 }
 #app-main-view {
+	@apply mt-20 pt-2 mb-4 px-8 py-2 mx-auto text-center bg-white rounded-sm;
 	max-width: 1175px;
 	&:empty {
 		display: none;
 	}
-	.post {
+	#post {
+		@apply flex px-4 py-4;
 		.content {
 			max-width: 110ch;
 		}
