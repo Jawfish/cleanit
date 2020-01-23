@@ -5,8 +5,8 @@
 	</div>
 </template>
 <script>
-import AppMainView from '@/components/AppMainView'
-import AppNavBar from '@/components/AppNavBar'
+import AppMainView from '@/components/AppMainView/AppMainView'
+import AppNavBar from '@/components/AppNavBar/AppNavBar'
 
 export default {
 	components: {

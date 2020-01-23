@@ -14,7 +14,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-	name: 'AppNavBarSubSearch',
+	name: 'AppNavBarSearch',
 	methods: mapActions(['setSubreddit']),
 	computed: {
 		subreddit() {

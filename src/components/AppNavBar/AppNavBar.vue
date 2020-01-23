@@ -1,6 +1,6 @@
 <template>
 	<nav>
-		<AppNavBarSearch />
+		<app-nav-bar-search />
 		<div class="nav-links">
 			<app-nav-bar-link name="Home" query="https://www.reddit.com/r/all/.json" icon="fa-home" />
 			<app-nav-bar-link name="Hot" query="https://www.reddit.com/hot/.json" icon="fa-fire" />
