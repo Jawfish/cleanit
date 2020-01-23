@@ -56,6 +56,7 @@ nav {
 	}
 	.post {
 		@apply flex flex-col px-4 py-4 items-start text-gray-400;
+		transition: all 0.5s;
 		&:not(:last-child) {
 			@apply border-b border-gray-300;
 		}
@@ -136,5 +137,10 @@ nav {
 		@apply pr-2;
 		max-width: 100%;
 	}
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0;
 }
 </style>

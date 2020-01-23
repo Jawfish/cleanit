@@ -1,6 +1,8 @@
 <template>
 	<div id="app-main-view">
-		<app-post class="post" v-for="(post, index) in posts" :key="index" :post="post" />
+		<transition-group name="fade">
+			<app-post class="post" v-for="(post, index) in posts" :key="index" :post="post" />
+		</transition-group>
 	</div>
 </template>
 
