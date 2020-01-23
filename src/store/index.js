@@ -9,9 +9,11 @@ export default new Vuex.Store({
 		query: 'https://www.reddit.com/r/all/.json',
 	},
 	getters: {
+		// > TODO read directly from state if these getters never get more functionality
 		posts: state => state.posts,
 		subreddit: state => state.subreddit,
 		query: state => state.query,
+		subredditUrl: state => 'https://www.reddit.com/r/' + state.subreddit,
 	},
 	mutations: {
 		ADD_POST(state, post) {
@@ -41,8 +43,10 @@ export default new Vuex.Store({
 					console.log('Populated posts')
 				})
 		},
-		setSubreddit: ({ commit }, subreddit) => {
+		setSubreddit: ({ commit, state }, subreddit) => {
 			commit('SET_SUBREDDIT', subreddit)
+			console.log('Subreddit set to ' + state.subreddit)
+			commit('SET_QUERY', 'https://www.reddit.com/r/' + subreddit + '/.json')
 		},
 		setQuery: ({ commit }, query) => {
 			commit('SET_QUERY', query)

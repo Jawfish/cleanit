@@ -18,6 +18,9 @@ export default {
 		},
 		query() {
 			return this.$store.getters.query
+		},
+		subredditUrl() {
+			return this.$store.getters.subredditUrl
 		}
 	},
 	created() {
