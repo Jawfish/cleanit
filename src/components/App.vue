@@ -56,21 +56,34 @@ nav {
 	&:empty {
 		display: none;
 	}
-	#post {
-		@apply flex px-4 py-4;
-		.content {
-			max-width: 110ch;
-		}
-		.subreddit {
-			cursor: pointer;
-		}
-		.thumbnail {
-			width: 135px;
-			height: 135px;
-			display: none;
-		}
+	.post {
+		@apply flex flex-col px-4 py-4 items-start;
 		&:not(:last-child) {
 			@apply border-b border-gray-300;
+		}
+		.title-wrapper {
+			@apply flex flex-col;
+			.title {
+				@apply mb-1 text-xl leading-none text-left text-gray-800;
+			}
+			.link {
+				@apply mb-1 italic leading-none text-left text-gray-500;
+			}
+		}
+		.subreddit {
+			@apply self-start text-xs text-gray-500;
+			cursor: pointer;
+		}
+		.info {
+			@apply flex text-gray-500;
+			.score {
+			}
+			.comments {
+			}
+			.author {
+			}
+			.time {
+			}
 		}
 	}
 }

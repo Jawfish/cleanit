@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import AppPost from './Post'
+import AppPost from './Post/Post'
 import { mapActions } from 'vuex'
 
 export default {
 	name: 'Posts',
 	components: { AppPost },
-	methods: mapActions(['populatePosts', 'unloadPosts']),
+	methods: mapActions(['populatePosts']),
 	computed: {
 		posts() {
 			return this.$store.getters.posts
