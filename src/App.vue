@@ -32,6 +32,7 @@ nav {
 		@apply px-2 text-gray-100;
 		transition: all 250ms ease;
 		&:hover {
+			cursor: pointer;
 			@apply text-yellow-500;
 			background-position-y: 100%;
 		}
