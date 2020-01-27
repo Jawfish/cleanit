@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.4.4",
+    "serve": "^11.3.0",
     "vue": "^2.6.10",
     "vue-particles": "^1.0.9",
     "vue-resource": "^1.5.1",
@@ -36,7 +37,8 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential", "eslint:recommended"
+      "plugin:vue/essential",
+      "eslint:recommended"
     ],
     "rules": {
       "comma-dangle": 0,
@@ -80,12 +82,16 @@
     }
   },
   "browserslist": [
-    "> 1%", "last 2 versions"
+    "> 1%",
+    "last 2 versions"
   ],
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,vue}": ["vue-cli-service lint", "git add"]
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
   }
 }

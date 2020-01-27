@@ -2,7 +2,7 @@
 	<div
 		class="subreddit"
 		:href="'https://www.reddit.com/' + subreddit"
-		@click="unloadPosts(), setQuery('https://www.reddit.com/r/' + subreddit + '/.json'), populatePosts()"
+		@click="unloadPosts(), setQuery('https://www.reddit.com/r/' + subreddit + '/.json'), populatePosts(), setSubreddit(subreddit)"
 	>r/{{subreddit}}</div>
 </template>
 

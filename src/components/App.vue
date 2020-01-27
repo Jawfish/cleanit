@@ -7,7 +7,6 @@
 <script>
 import AppPosts from '@/components/Main/Posts'
 import AppNavBar from '@/components/Header/Nav'
-
 export default {
 	components: {
 		AppNavBar,
@@ -28,26 +27,32 @@ nav {
 	width: 100%;
 	top: 0;
 	left: 0;
-	.nav-link {
-		@apply mx-1 text-gray-100 leading-none;
-		transition: all 150ms ease;
-		i {
-			@apply mx-1;
-		}
-		&:hover {
-			cursor: pointer;
-			@apply text-yellow-500;
-			background-position-y: 100%;
-		}
-		// nav-links; outer container
-		&s {
-			@apply flex items-center justify-between mb-1 leading-tight;
+	.nav-links {
+		@apply flex items-center justify-between mb-1 leading-tight;
+		.nav-link {
+			@apply mx-1 text-gray-100 leading-none;
+			transition: all 150ms ease;
+			i {
+				@apply mx-1;
+			}
+			&:hover {
+				cursor: pointer;
+				@apply text-yellow-500;
+				background-position-y: 100%;
+			}
 		}
 	}
 	.search {
-		@apply text-gray-500;
+		@apply text-gray-500 flex items-center px-4 bg-gray-800 rounded-sm;
+		input {
+			@apply mr-3 leading-tight text-gray-200 bg-transparent border-none appearance-none;
+			&:focus {
+				@apply outline-none;
+			}
+		}
 	}
 }
+
 #app-main-view {
 	@apply mt-20 pt-2 mb-4 px-8 py-2 mx-auto text-center bg-white rounded-sm;
 	max-width: 1175px;
@@ -56,7 +61,7 @@ nav {
 	}
 	.post {
 		@apply flex flex-col px-4 py-4 items-start text-gray-400;
-		transition: all 0.5s;
+		transition: all 0.5s ease-in-out;
 		&:not(:last-child) {
 			@apply border-b border-gray-300;
 		}
@@ -139,8 +144,8 @@ nav {
 	}
 }
 
-.fade-enter,
-.fade-leave-to {
+.fade-leave-to,
+.fade-enter {
 	opacity: 0;
 }
 </style>

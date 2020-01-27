@@ -18,12 +18,15 @@ export default new Vuex.Store({
 	mutations: {
 		ADD_POST(state, post) {
 			state.posts.push(post)
+			console.log('Populated posts')
 		},
 		UNLOAD_POSTS(state) {
 			state.posts = []
+			console.log('Unloaded posts')
 		},
 		SET_SUBREDDIT(state, subreddit) {
 			state.subreddit = subreddit
+			console.log('Set state subreddit to ' + state.subreddit)
 		},
 		SET_QUERY(state, query) {
 			state.query = query
@@ -33,20 +36,16 @@ export default new Vuex.Store({
 	actions: {
 		unloadPosts: ({ commit }) => {
 			commit('UNLOAD_POSTS')
-			console.log('Unloaded posts')
 		},
 		populatePosts: ({ commit, state }) => {
 			fetch(state.query)
 				.then(response => response.json())
 				.then(data => {
 					data.data.children.forEach(child => commit('ADD_POST', child.data))
-					console.log('Populated posts')
 				})
 		},
 		setSubreddit: ({ commit, state }, subreddit) => {
 			commit('SET_SUBREDDIT', subreddit)
-			console.log('Subreddit set to ' + state.subreddit)
-			commit('SET_QUERY', 'https://www.reddit.com/r/' + subreddit + '/.json')
 		},
 		setQuery: ({ commit }, query) => {
 			commit('SET_QUERY', query)

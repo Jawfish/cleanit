@@ -1,6 +1,7 @@
 <template>
 	<nav>
 		<app-search />
+		<app-subreddit-title />
 		<div class="nav-links">
 			<app-link name="Home" query="https://www.reddit.com/r/all/.json" icon="fa-home" />
 			<app-link name="Hot" query="https://www.reddit.com/hot/.json" icon="fa-fire" />
@@ -13,9 +14,10 @@
 <script>
 import AppSearch from './Search'
 import AppLink from './Link'
+import AppSubredditTitle from '../Main/SubredditTitle'
 
 export default {
 	name: 'Nav',
-	components: { AppSearch, AppLink }
+	components: { AppSearch, AppLink, AppSubredditTitle }
 }
 </script>
